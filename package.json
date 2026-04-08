@@ -1,0 +1,10 @@
+{
+  "name": "proof-of-meme",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Proof of Meme - AI trust screening for rumors, wallets, links, and token claims.",
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js"
+  }
+}

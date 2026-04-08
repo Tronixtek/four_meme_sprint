@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proof of Meme</title>
+    <meta
+      name="description"
+      content="Proof of Meme helps crypto communities inspect screenshots, links, wallets, contracts, and token claims before users connect or send funds."
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-backdrop">
+      <div class="noise-grid"></div>
+      <div class="glow glow-left"></div>
+      <div class="glow glow-right"></div>
+    </div>
+
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="/">
+          <span class="brand-mark">PM</span>
+          <span class="brand-copy">
+            <strong>Proof of Meme</strong>
+            <span>AI Trust Proofs for Crypto Communities</span>
+          </span>
+        </a>
+
+        <nav class="topnav" aria-label="Primary">
+          <a href="#workspace">Analyzer</a>
+          <a href="#capabilities">Capabilities</a>
+          <a href="#workflow">Workflow</a>
+        </nav>
+
+        <div class="topbar-chips">
+          <span class="topbar-chip">EVM</span>
+          <span class="topbar-chip">Solana</span>
+          <span class="topbar-chip accent">AI + Chain</span>
+        </div>
+      </header>
+
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Community Defense Layer</p>
+          <h1>Inspect the signal before your users connect.</h1>
+          <p class="hero-text">
+            Proof of Meme screens suspicious screenshots, launch posts, phishing links, wallet addresses,
+            token contracts, and social claims, then turns them into a clean proof report your team can act on.
+          </p>
+
+          <div class="hero-actions">
+            <a class="primary-link" href="#workspace">Open Analyzer</a>
+            <a class="secondary-link" href="#capabilities">See Capabilities</a>
+          </div>
+
+          <div class="hero-metrics">
+            <article>
+              <span>Inputs</span>
+              <strong>Screenshots, links, wallets, contracts</strong>
+            </article>
+            <article>
+              <span>Coverage</span>
+              <strong>AI review + EVM + Solana checks</strong>
+            </article>
+            <article>
+              <span>Output</span>
+              <strong>Verdict, evidence, next steps, proof report</strong>
+            </article>
+          </div>
+        </div>
+
+        <aside class="hero-stage">
+          <div class="hero-stage-head">
+            <span class="status-dot"></span>
+            <span>Live Monitoring Surface</span>
+          </div>
+
+          <div class="threat-card threat-card-primary">
+            <div class="threat-card-top">
+              <span>Threat Snapshot</span>
+              <span class="threat-badge">Incoming Claim</span>
+            </div>
+            <h2>"Official support says reconnect your wallet immediately."</h2>
+            <p>Proof of Meme turns loose community chatter into one decision-ready proof report with an evidence trail your team can share.</p>
+          </div>
+
+          <div class="threat-grid">
+            <article class="threat-mini">
+              <span>Screenshot Forensics</span>
+              <strong>Catch fake announcements and spoofed UI</strong>
+            </article>
+            <article class="threat-mini">
+              <span>Multi-chain Intel</span>
+              <strong>Inspect EVM contracts and Solana accounts</strong>
+            </article>
+            <article class="threat-mini">
+              <span>Actionable Proofs</span>
+              <strong>Give mods, traders, and launch teams a response plan</strong>
+            </article>
+          </div>
+        </aside>
+      </section>
+
+      <section class="signal-strip" id="capabilities">
+        <article class="signal-card">
+          <span class="signal-label">Screening</span>
+          <h2>Phishing links, fake support, false launch claims</h2>
+          <p>Language heuristics catch urgency, credential harvesting, impersonation, and unrealistic promises before they spread.</p>
+        </article>
+        <article class="signal-card">
+          <span class="signal-label">On-chain</span>
+          <h2>EVM contracts and Solana accounts</h2>
+          <p>Live chain checks distinguish wallets from contracts, detect token metadata, and surface account structure in context.</p>
+        </article>
+        <article class="signal-card">
+          <span class="signal-label">Operations</span>
+          <h2>Built for communities under pressure</h2>
+          <p>Moderators, token teams, and traders get one clear proof report instead of raw alerts, scattered screenshots, and guesswork.</p>
+        </article>
+      </section>
+
+      <main class="workspace" id="workspace">
+        <section class="workspace-panel intake-panel">
+          <div class="panel-head">
+            <div>
+              <p class="panel-kicker">Trust Intake</p>
+              <h2>Submit anything your community is unsure about</h2>
+            </div>
+            <span class="panel-chip">Input</span>
+          </div>
+
+          <div class="mode-switch" role="tablist" aria-label="Input mode">
+            <button class="mode-button active" data-type="text" type="button">Rumor text</button>
+            <button class="mode-button" data-type="url" type="button">Link</button>
+            <button class="mode-button" data-type="address" type="button">Wallet / contract</button>
+            <button class="mode-button" data-type="image" type="button">Screenshot</button>
+          </div>
+
+          <div class="intake-hints">
+            <span>Paste an X post, Telegram message, contract, wallet, or screenshot.</span>
+            <span>We translate messy signals into one proof report.</span>
+          </div>
+
+          <form id="analyzer-form" class="analyzer-form">
+            <label class="field-label" id="submission-label" for="submission-input">Rumor text</label>
+            <textarea
+              id="submission-input"
+              name="submission-input"
+              rows="9"
+              placeholder="Paste the message, URL, wallet, contract, or claim you want checked."
+            ></textarea>
+
+            <div class="upload-box">
+              <div class="upload-copy">
+                <span class="field-label">Screenshot evidence</span>
+                <p id="upload-status">No image selected. Add a screenshot when the claim lives inside a social post, website, or fake app screen.</p>
+              </div>
+              <div class="upload-actions">
+                <label class="file-button" for="screenshot-input">Upload image</label>
+                <input id="screenshot-input" type="file" accept="image/png,image/jpeg,image/webp,image/gif" hidden />
+                <button class="secondary-button compact-button" id="clear-image" type="button">Remove</button>
+              </div>
+            </div>
+
+            <div class="engine-bar">
+              <span class="engine-bar-label">Coverage</span>
+              <p class="engine-note" id="engine-status">Checking analysis coverage...</p>
+            </div>
+
+            <div class="sample-row">
+              <button class="ghost-chip" type="button" data-sample="rug">Fake airdrop</button>
+              <button class="ghost-chip" type="button" data-sample="official">Low-risk launch</button>
+              <button class="ghost-chip" type="button" data-sample="url">Phishing link</button>
+              <button class="ghost-chip" type="button" data-sample="address">Known token</button>
+            </div>
+
+            <div class="action-row">
+              <button class="primary-button" id="submit-button" type="submit">Screen Submission</button>
+              <button class="secondary-button" id="copy-summary" type="button">Copy Proof Summary</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="workspace-panel output-panel">
+          <div class="panel-head">
+            <div>
+              <p class="panel-kicker">Proof Report</p>
+              <h2>Clear verdict, chain context, and response plan</h2>
+            </div>
+            <div class="panel-pill-row">
+              <span class="pill" id="source-pill">Engine</span>
+              <span class="pill" id="confidence-pill">Waiting</span>
+            </div>
+          </div>
+
+          <article class="receipt-card" id="receipt-card">
+            <div class="receipt-header">
+              <div class="receipt-topline">
+                <span class="receipt-label">Verdict</span>
+                <span class="receipt-type" id="mode-label">Text</span>
+              </div>
+              <div class="risk-meter">
+                <div class="risk-meter-track">
+                  <div class="risk-meter-fill" id="risk-meter-fill"></div>
+                </div>
+                <div class="risk-meter-labels">
+                  <span>Low signal risk</span>
+                  <span>High signal risk</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="verdict-row">
+              <div class="verdict-copy">
+                <h3 id="verdict-label">Needs More Evidence</h3>
+                <p id="summary-text">
+                  Run an analysis to turn raw claims into a verdict, a signal breakdown, and recommended next steps.
+                </p>
+              </div>
+              <div class="score-block">
+                <span>Risk Score</span>
+                <strong id="risk-score">--</strong>
+              </div>
+            </div>
+
+            <div class="receipt-meta-grid">
+              <article>
+                <span>Generated</span>
+                <strong id="generated-at">Not generated yet</strong>
+              </article>
+              <article>
+                <span>Proof Mode</span>
+                <strong id="mode-summary">Investigation pending</strong>
+              </article>
+            </div>
+          </article>
+
+          <div class="detail-grid">
+            <section class="detail-panel">
+              <h3>Claims Found</h3>
+              <div id="claims-list" class="tag-list empty-state">No extracted claims yet.</div>
+            </section>
+
+            <section class="detail-panel">
+              <h3>Signals</h3>
+              <div id="signals-list" class="stack-list empty-state">No signals yet.</div>
+            </section>
+
+            <section class="detail-panel">
+              <h3>Evidence Trail</h3>
+              <div id="evidence-list" class="stack-list empty-state">No evidence trail yet.</div>
+            </section>
+
+            <section class="detail-panel">
+              <h3>Recommended Response</h3>
+              <div id="next-steps-list" class="stack-list empty-state">No recommended next steps yet.</div>
+            </section>
+          </div>
+        </section>
+      </main>
+
+      <section class="workflow-section" id="workflow">
+        <div class="section-head">
+          <p class="eyebrow">How It Works</p>
+          <h2>Built for fast moderation and safer launches</h2>
+        </div>
+
+        <div class="workflow-grid">
+          <article class="workflow-card">
+            <span>01</span>
+            <h3>Capture the signal</h3>
+            <p>Paste a launch post, support DM, suspicious link, wallet, contract, or screenshot exactly as the community saw it.</p>
+          </article>
+          <article class="workflow-card">
+            <span>02</span>
+            <h3>Cross-check with intelligence</h3>
+            <p>Proof of Meme combines language screening, screenshot intake, and multi-chain account analysis to classify the risk.</p>
+          </article>
+          <article class="workflow-card">
+            <span>03</span>
+            <h3>Respond with confidence</h3>
+            <p>Share the resulting proof report with moderators, token teams, or users so they know exactly what to verify next.</p>
+          </article>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <div>
+          <p class="eyebrow">Who It Serves</p>
+          <h2>Made for launch teams, trading communities, moderators, and support desks.</h2>
+        </div>
+        <p>
+          Proof of Meme helps teams stop phishing, spoofed announcements, and fake wallet claims before they spread through the community.
+        </p>
+      </footer>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
