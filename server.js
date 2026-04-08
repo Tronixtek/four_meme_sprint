@@ -2,9 +2,8 @@ const http = require("http");
 const fs = require("fs");
 const path = require("path");
 const { loadLocalEnvFiles } = require("./lib/env");
-const { analyzeWithBestAvailable, isOpenAIConfigured, getOpenAIModel } = require("./lib/openai-analysis");
-const { getEvmChainLabel, getEvmRpcSourceLabel, isEvmRpcReady } = require("./lib/evm-rpc");
-const { getSolanaChainLabel, getSolanaRpcSourceLabel, isSolanaRpcReady } = require("./lib/solana-rpc");
+const { analyzeWithBestAvailable } = require("./lib/openai-analysis");
+const { getHealthPayload } = require("./lib/health");
 
 loadLocalEnvFiles(__dirname);
 
@@ -85,18 +84,7 @@ const server = http.createServer(async (request, response) => {
   const requestUrl = new URL(request.url, `http://${request.headers.host || "localhost"}`);
 
   if (request.method === "GET" && requestUrl.pathname === "/api/health") {
-    sendJson(response, 200, {
-      ok: true,
-      service: "proof-of-meme",
-      aiConfigured: isOpenAIConfigured(),
-      model: getOpenAIModel(),
-      evmConfigured: isEvmRpcReady(),
-      evmChainLabel: getEvmChainLabel(),
-      evmRpcSource: getEvmRpcSourceLabel(),
-      solanaConfigured: isSolanaRpcReady(),
-      solanaChainLabel: getSolanaChainLabel(),
-      solanaRpcSource: getSolanaRpcSourceLabel()
-    });
+    sendJson(response, 200, getHealthPayload());
     return;
   }
 

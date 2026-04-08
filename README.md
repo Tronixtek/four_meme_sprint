@@ -38,6 +38,24 @@ npm start
 
 Then open `http://localhost:3000`.
 
+## Deploy on Vercel
+
+This repo is now Vercel-ready:
+
+- Static files are served from [`public`](./public)
+- Vercel Functions live in [`api`](./api)
+- [`vercel.json`](./vercel.json) points the output directory at `public`
+
+Recommended setup in Vercel:
+
+1. Import the GitHub repository.
+2. Set the Framework Preset to `Other`.
+3. Leave the build command empty.
+4. Confirm the output directory is `public`.
+5. Add the environment variables listed below in the Vercel dashboard.
+
+The local `server.js` is still useful for development, but Vercel deploys the file-based functions under `/api/*`.
+
 ## Enable AI analysis
 
 Set environment variables before running the app:
